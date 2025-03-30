@@ -17,31 +17,7 @@ app.listen(PORT, () =>{
     console.log(`Server running on http://localhost:${PORT}`);
 });
 
-//Greeting function
-app.get('/greetings/:name', (req, res) => {
-    const name = req.params.name;
-    const language = req.query.language || 'en';
-
-    if(language === 'en'){
-        res.send(`Hello, ${name}!`);
-    } else if (language === 'es'){
-        res.send(`¡Hola ${name}!`);
-    } else {
-        res.send(`language not supported`);
-    }
-});
-
-//Even or odd function
-
-app.get('/evenorodd/:num', (req,res) => {
-    const num = req.params.num;
-    const isEven = num % 2 === 0;
-
-    res.json({number: num, isTheNumberEven: isEven});
-});
-
 //Task manager REST API
-
 
 // Task object array 
 let tasks = [
